@@ -1,0 +1,9 @@
+/Users/seangallen/angular/posapp/server/bin/Debug/netcoreapp1.1/server.deps.json
+/Users/seangallen/angular/posapp/server/bin/Debug/netcoreapp1.1/server.runtimeconfig.json
+/Users/seangallen/angular/posapp/server/bin/Debug/netcoreapp1.1/server.runtimeconfig.dev.json
+/Users/seangallen/angular/posapp/server/bin/Debug/netcoreapp1.1/server.dll
+/Users/seangallen/angular/posapp/server/bin/Debug/netcoreapp1.1/server.pdb
+/Users/seangallen/angular/posapp/server/obj/Debug/netcoreapp1.1/server.csproj.CoreCompileInputs.cache
+/Users/seangallen/angular/posapp/server/obj/Debug/netcoreapp1.1/server.AssemblyInfo.cs
+/Users/seangallen/angular/posapp/server/obj/Debug/netcoreapp1.1/server.dll
+/Users/seangallen/angular/posapp/server/obj/Debug/netcoreapp1.1/server.pdb
