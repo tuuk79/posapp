@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using server.Models;
+using server.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -30,10 +29,12 @@ namespace server
         {
             // Add framework services.
             services.AddMvc();
+           
+            services.AddDbContext<OrderContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SalesDatabase")));
             services.AddSwaggerGen(c =>
-    {
-        c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
-    });
+            {
+               c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

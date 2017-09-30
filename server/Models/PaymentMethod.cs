@@ -2,7 +2,8 @@
 {
     public class PaymentMethod
     {
+        public int Id { get; set; }
         public string CardType { get; set; }
-        public int LastFourNumber { get; set; }
+        public int LastFourNumbers { get; set; }
     }
 }
