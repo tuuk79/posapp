@@ -6,16 +6,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { AdminComponent } from './admin/admin.component';
+import { ProductsComponent } from './products/products.component';
 
 const appRoutes: Routes = [
-	{ path: 'admin', component: AdminComponent }
+	{ path: 'admin', component: AdminComponent },
+	{ path: 'product', component: ProductsComponent }
 ];
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		ValueComponent,
-		AdminComponent
+		AdminComponent,
+                ProductsComponent 
 	],
 	imports: [
 		BrowserModule,

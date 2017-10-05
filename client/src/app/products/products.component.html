@@ -1,3 +1,6 @@
+<p>Hello Products</p>
+
+<!--
 <form [formGroup]="heroForm" (ngSubmit)="onSubmit()" novalidate>
 
 <div class="form-group">
@@ -8,7 +11,6 @@
 
 <div formArrayName="secretLairs" class="well well-lg">
   <div *ngFor="let address of secretLairs.controls; let i=index" [formGroupName]="i" >
-    <!-- The repeated address template -->
     <h4>Address #{{i + 1}}</h4>
     <div style="margin-left: 1em;">
       <div class="form-group">
@@ -35,7 +37,6 @@
       </div>
     </div>
     <br>
-    <!-- End of the repeated address template -->
   </div>
   <button (click)="addLair()" type="button">Add a Secret Lair</button>
 </div>
@@ -58,3 +59,4 @@
 <button type="reset" (click)="revert()"
         [disabled]="heroForm.pristine" class="btn btn-danger">Revert</button>
 </div>
+-->
