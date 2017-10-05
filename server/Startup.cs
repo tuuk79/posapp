@@ -29,8 +29,8 @@ namespace server
         {
             // Add framework services.
             services.AddMvc();
-           
-            services.AddDbContext<OrderContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SalesDatabase")));
+
+            services.AddDbContext<OrderContext>(options => options.UseSqlite(Configuration.GetConnectionString("SalesDatabase"))); //"Data Source=MvcMovie.db")); //Configuration.GetConnectionString("SalesDatabase")));
             services.AddSwaggerGen(c =>
             {
                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
