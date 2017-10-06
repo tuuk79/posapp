@@ -8,14 +8,13 @@ using server.Data;
 namespace server.Migrations
 {
     [DbContext(typeof(OrderContext))]
-    [Migration("20170930214352_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20171006223045_NewInitialMigration")]
+    partial class NewInitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.1")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "1.1.1");
 
             modelBuilder.Entity("server.Models.Address", b =>
                 {
@@ -24,7 +23,7 @@ namespace server.Migrations
 
                     b.Property<string>("State");
 
-                    b.Property<int>("Street");
+                    b.Property<string>("Street");
 
                     b.HasKey("Id");
 
@@ -84,7 +83,11 @@ namespace server.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Price");
+                    b.Property<string>("Image");
+
+                    b.Property<string>("Name");
+
+                    b.Property<double>("Price");
 
                     b.HasKey("Id");
 
