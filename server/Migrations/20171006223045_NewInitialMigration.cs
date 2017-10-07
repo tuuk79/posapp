@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace server.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class NewInitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,9 +13,9 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     State = table.Column<string>(nullable: true),
-                    Street = table.Column<int>(nullable: false)
+                    Street = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -28,8 +27,10 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Price = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Image = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Price = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +42,7 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Access = table.Column<bool>(nullable: false),
                     Employee = table.Column<bool>(nullable: false)
                 },
@@ -55,7 +56,7 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     AddressId = table.Column<int>(nullable: true),
                     Name = table.Column<string>(nullable: true)
                 },
@@ -75,7 +76,7 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     CustomerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -94,7 +95,7 @@ namespace server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     CardType = table.Column<string>(nullable: true),
                     CustomerId = table.Column<int>(nullable: true),
                     LastFourNumbers = table.Column<int>(nullable: false)
