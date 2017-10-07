@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Product } from './product';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
+
 export class ProductsComponent implements OnInit {
   
   productFrom: FormGroup;
-  product: any = new Product();
+  product: Product = new Product();
 
   constructor() { }
 
   ngOnInit(): void {
-  	this.product = new FormGroup();
+  	this.productFrom = new FormGroup({});
   }
 
 }
