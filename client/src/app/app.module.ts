@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductsComponent } from './products/products.component';
+import { ListComponent } from './list/list.component';
+import { ProductsService } from './services/products.service';
 
 const appRoutes: Routes = [
 	{ path: 'admin', component: AdminComponent },
@@ -18,7 +20,8 @@ const appRoutes: Routes = [
 		AppComponent,
 		ValueComponent,
 		AdminComponent,
-                ProductsComponent 
+		ProductsComponent,
+		ListComponent
 	],
 	imports: [
 		BrowserModule,
@@ -28,7 +31,7 @@ const appRoutes: Routes = [
 			// { enableTracing: true }
 		)
 	],
-	providers: [],
+	providers: [ProductsService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
