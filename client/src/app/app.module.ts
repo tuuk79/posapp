@@ -22,12 +22,12 @@ const appRoutes: Routes = [
 		ValueComponent,
 		AdminComponent,
 		ProductsComponent,
-		ListComponent,
-		ReactiveFormsModule
+		ListComponent
 	],
 	imports: [
 		BrowserModule,
 		HttpModule,
+		ReactiveFormsModule,
 		RouterModule.forRoot(
 			appRoutes,
 			// { enableTracing: true }
