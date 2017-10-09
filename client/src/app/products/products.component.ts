@@ -13,11 +13,8 @@ export class ProductsComponent implements OnInit {
 	products: Product[];
 
 	productFrom: FormGroup;
-	product: Product = new Product();
 
-	constructor(private productsService: ProductsService) {
-
-	}
+	constructor(private productsService: ProductsService) {}
 
 	ngOnInit() {
 		this.products = this.productsService.getProducts();
