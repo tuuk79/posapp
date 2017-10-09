@@ -5,8 +5,8 @@ import { Product } from '../models/product';
 export class ProductsService {
 	getProducts(): Product[] {
 		const products: Product[] = [
-			{ id: 1, name: 'microwave' },
-			{ id: 2, name: 'refrigerator' }
+			{ id: 1, name: 'microwave', image: '', price: 0 },
+			{ id: 2, name: 'refrigerator', image: '', price: 0 }
 		];
 
 		return products;
