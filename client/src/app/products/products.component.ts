@@ -18,6 +18,10 @@ export class ProductsComponent implements OnInit {
 
 	ngOnInit() {
 		this.products = this.productsService.getProducts();
-		this.productFrom = new FormGroup({});
+		this.productFrom = new FormGroup({
+			name: new FormControl(),
+			price: new FormControl(),
+			image: new FormControl(),
+			});
 	}
 }
