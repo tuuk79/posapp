@@ -28,9 +28,9 @@
                           <span *ngIf="productForm.get('name').errors.required">
                               Please enter the product's name.
                           </span>
-                          <span *ngIf="productForm.get('name').errors.minlength">
-                              The name must be longer than 3 characters.
-                          </span>
+                          <span *ngIf="productForm.get('name').errors.minLength"> 
+                            Name requires a length greater than 2.
+                          </span>                          
                       </span>
                   </div>
               </div>

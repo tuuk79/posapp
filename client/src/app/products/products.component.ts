@@ -19,8 +19,8 @@ export class ProductsComponent implements OnInit {
 	ngOnInit() {
 		this.products = this.productsService.getProducts();
 		this.productForm = this.formBuilder.group({
-			name: ['', Validators.required, Validators.minLength(3) ],
-			price: [0.00, Validators.max(1000)],
+			name: ["", [Validators.required, Validators.minLength(3)] ],
+			price: [0.00, [Validators.required, Validators.min(.01), Validators.max(1000)]],
 			image: ''
 			});
 	}
