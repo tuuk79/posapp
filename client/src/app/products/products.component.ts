@@ -12,16 +12,20 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ProductsComponent implements OnInit {
 	products: Product[];
 
-	productFrom: FormGroup;
+	productForm: FormGroup;
 
 	constructor(private productsService: ProductsService) {}
 
 	ngOnInit() {
 		this.products = this.productsService.getProducts();
-		this.productFrom = new FormGroup({
+		this.productForm = new FormGroup({
 			name: new FormControl(),
 			price: new FormControl(),
-			image: new FormControl(),
+			image: new FormControl()
 			});
+	}
+
+	save() {
+
 	}
 }
