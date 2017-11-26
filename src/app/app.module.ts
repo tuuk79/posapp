@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductsComponent } from './products/products.component';
 import { ListComponent } from './list/list.component';
@@ -19,7 +18,6 @@ const appRoutes: Routes = [
 @NgModule({
 	declarations: [
 		AppComponent,
-		ValueComponent,
 		AdminComponent,
 		ProductsComponent,
 		ListComponent
