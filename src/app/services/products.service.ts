@@ -8,7 +8,8 @@ export class ProductsService {
 	constructor(private http: Http) { }
 
 	getProducts(): Observable<any> {
-		const url = 'assets/mock-products.json';
+		// const url = 'assets/mock-products.json';
+		const url = 'http://localhost:5000/api/products';
 		return this.http.get(url);
 	}
 }

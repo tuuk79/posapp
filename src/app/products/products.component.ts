@@ -18,8 +18,8 @@ export class ProductsComponent implements OnInit {
 
 	ngOnInit() {
 		this.productsService.getProducts()
-		.subscribe(response => {
-			this.products = response.json();
-		});
+			.subscribe(response => {
+				this.products = response.json();
+			});
 	}
 }
