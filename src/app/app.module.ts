@@ -7,12 +7,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductsComponent } from './products/products.component';
-import { ListComponent } from './list/list.component';
 import { ProductsService } from './services/products.service';
+import { SubproductComponent } from './subproduct/subproduct.component';
 
 const appRoutes: Routes = [
-	{ path: 'admin', component: AdminComponent },
-	{ path: 'product', component: ProductsComponent }
+	{ path: 'admin', component: AdminComponent }
 ];
 
 @NgModule({
@@ -20,7 +19,7 @@ const appRoutes: Routes = [
 		AppComponent,
 		AdminComponent,
 		ProductsComponent,
-		ListComponent
+		SubproductComponent
 	],
 	imports: [
 		BrowserModule,

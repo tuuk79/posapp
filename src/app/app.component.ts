@@ -8,14 +8,15 @@ import { ProductsService } from './services/products.service';
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-	@Output() products;
+	products;
 
 	constructor(private productService: ProductsService) { }
 
 	ngOnInit() {
-		this.productService.getProducts()
-			.subscribe(response => {
-				this.products = response.json();
+		this.productService.currentProducts
+			.subscribe(data => {
+				this.products = data;
+				console.log('app component just got notified of new products');
 			});
 	}
 }

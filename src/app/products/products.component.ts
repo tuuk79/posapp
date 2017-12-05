@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { ProductsService } from '../services/products.service';
-import { Product } from '../models/product';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
@@ -12,14 +11,15 @@ import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 
 export class ProductsComponent implements OnInit {
-	products: any;
+	products;
 
-	constructor(private productsService: ProductsService) { }
+	constructor(private productService: ProductsService) { }
 
 	ngOnInit() {
-		this.productsService.getProducts()
-			.subscribe(response => {
-				this.products = response.json();
+		this.productService.currentProducts
+			.subscribe(data => {
+				this.products = data;
+				console.log('products component just got notified of new products');
 			});
 	}
 }
