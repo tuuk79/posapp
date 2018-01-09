@@ -2,15 +2,67 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Posapp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<title>Posapp</title>
+	<base href="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<script>
+		var dragSrcElem = null;
+
+		function start() {
+			console.log('loading...')
+			var dragDivs = document.querySelectorAll(".dragDiv");
+			[].forEach.call(dragDivs, function (dragDiv) {
+				dragDiv.addEventListener('dragstart', handleDragStart, false);
+				dragDiv.addEventListener('dragover', handleDragOver, false);
+				dragDiv.addEventListener('drop', handleDrop, false);
+			});
+		}
+
+		function handleDragStart(e) {
+			console.log('handling drag...');
+
+			dragSrcElem = this;
+
+			e.dataTransfer.effectAllowed = 'move';
+			e.dataTransfer.setData('text/html', this.innerHTML);
+		}
+
+		function handleDragOver(e) {
+			console.log('handling dragover');
+
+			if (e.preventDefault) {
+				e.preventDefault();
+			}
+
+			e.dataTransfer.dropEffect = 'move';
+
+			return false;
+		}
+
+		function handleDrop(e) {
+			console.log('handling drop');
+
+			if (e.stopPropagation) {
+				e.stopPropagation();
+			}
+
+			if (dragSrcElem != this) {
+				console.log('now entering: ' + this);
+				dragSrcElem.innerHTML = this.innerHTML;
+				this.innerHTML = e.dataTransfer.getData('text/html');
+				console.log('just moved text: ' + e.dataTransfer.getData('text/html'));
+			}
+
+			return false;
+		}
+	</script>
 </head>
 
-<body>
-  <app-root></app-root>
+<body onload="start();">
+	<app-root></app-root>
 </body>
 
 </html>

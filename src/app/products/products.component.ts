@@ -3,6 +3,7 @@ import { ProductsService } from '../services/products.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Http } from '@angular/http';
 import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
+import { MatCardModule } from '@angular/material';
 
 @Component({
 	selector: 'app-products',
