@@ -10,13 +10,9 @@ import { ProductsService } from './services/products.service';
 export class AppComponent implements OnInit {
 	products;
 
-	constructor(private productService: ProductsService) { }
-
-	ngOnInit() {
-		this.productService.currentProducts
-			.subscribe(data => {
-				this.products = data;
-				console.log('app component just got notified of new products');
-			});
+	constructor(private productService: ProductsService) {
+		this.productService.getProducts();
 	}
+
+	ngOnInit() { }
 }

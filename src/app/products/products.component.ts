@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Http } from '@angular/http';
-import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
 
 @Component({
 	selector: 'app-products',
@@ -14,13 +13,26 @@ import { MatCardModule } from '@angular/material';
 export class ProductsComponent implements OnInit {
 	products;
 
-	constructor(private productService: ProductsService) { }
-
-	ngOnInit() {
+	constructor(private productService: ProductsService, public dialog: MatDialog) {
+		console.log('getting current products from products service');
+		// get current products
 		this.productService.currentProducts
 			.subscribe(data => {
+				console.log(data);
 				this.products = data;
-				console.log('products component just got notified of new products');
 			});
+	}
+
+	ngOnInit() { }
+
+	addProduct(): void {
+		const dialogRef = this.dialog.open(AddProductDialogComponent, {
+			width: '250px',
+			data: { name: 'Steve Yoo' }
+		});
+
+		dialogRef.afterClosed().subscribe(result => {
+			console.log('The dialog was closed');
+		});
 	}
 }
